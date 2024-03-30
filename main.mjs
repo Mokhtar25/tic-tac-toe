@@ -28,14 +28,25 @@ function RunGame(player1, player2){
         console.log(game.play(+input_o, 2).message);
 
         game.play(+input_o, 2);
-        console.dir(game.board)
     
     }
 
-    console.log(game.checkend().type);
+    let gameend = game.checkend().type;
+    switch (gameend) {
+        case 1:
+            gameend = `Winner is X`
+            break;
+        case 2:
+            gameend = `Winner is O`
 
+        default:
+            gameend = `Game is a Tie`
+            break;
+    }
+    console.log(gameend);
 } 
-
-RunGame('1', 2);
+while (true){
+RunGame(1, 2);
+}
 
 
