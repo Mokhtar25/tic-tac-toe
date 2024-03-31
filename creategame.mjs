@@ -83,26 +83,25 @@ function checkend(){
                 let currnet = borad[i][0];
                 if (currnet === borad[i][1] && currnet === borad[i][2]){
                     if (currnet !== 0){
-                    return {end:true, type:currnet};
+                    return {end:true, type:currnet, check:"h1"};
                     }
                 }
                 let currnetx = borad[0][i]
                 if (currnetx === borad[1][i] && currnetx === borad[2][i]){
                     if (currnetx !== 0){
-                    return {end:true, type:currnetx}
+                    return {end:true, type:currnetx, check:"v1"}
                     }
                 }
 
             }
     if (borad[0][0] === borad[1][1] && borad[0][0] === borad[2][2]){
         if (borad[0][0]!== 0){
-        return {end:true, type:borad[0][0]}
+        return {end:true, type:borad[0][0], check:'vh1'}
         }
     }
     if (borad[0][2] === borad[1][1] && borad[0][2] === borad[2][0]){
-        if (borad[0][2]!== 0){
-        return {end:true, type:borad[0][2]
-        }
+        if (borad[0][2] !== 0){
+        return {end:true, type:borad[0][2], check:'vh2'}
     }}
             if (plays >= 9){
                 return {end:true, type:"draw"}

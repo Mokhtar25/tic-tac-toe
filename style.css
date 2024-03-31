@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.grid-game *{
+    height: 100px;
+    width: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    box-sizing: border-box;
+
+    border: 1px solid black;
+    
+    background-color: #14b8a6;
+
+} 
+.grid-game *:hover{
+    background-color:  #047857;
+    cursor: pointer;
+}
+
+.grid-game *:active{
+    background-color: #a7f3d0;
+}
+.main{
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #dcfce7;
+    justify-content: center ;
+    flex-direction: column;
+    gap: 50px;
+}
+.grid-game{
+    display:  grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+body{
+    height: 100vh;
+    background-color: #dcfce7;
+}
