@@ -29,7 +29,6 @@ function RunGame(player1, player2){
 
                 let input = inputweb(e.attributes.value.textContent, current);
 
-                console.log(game.board, game.checkend())
                 if (input.input === false){
                     update.textContent = input.message;
                     return 1;
