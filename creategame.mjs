@@ -65,22 +65,19 @@ return function CreateGame(){
                 break;
 
             default:
-            return {input:"invalid", message:"Please input a valid Box"};
+            return {input:false, message:"Please input a valid Box"};
         }
         if (borad[i][j] !== 0){
-            return {input:"invalid", message:"Place already chosen"};
+            return {input:false, message:"Place already chosen"};
         }
         borad[i][j] = type; 
-        plays++;
+        plays = plays + 1;
         
-        return {input:"valid", message:""}
+        return {input:true, message:""}
     } 
 
 function checkend(){
             
-            if (plays >= 9){
-                return {end:true, type:"draw"}
-            }
             // checking sides horzintal
             for (let i = 0; i < 3; i++){
                 let currnet = borad[i][0];
@@ -102,10 +99,14 @@ function checkend(){
         return {end:true, type:borad[0][0]}
         }
     }
-    if (borad[2][2] === borad[1][1] && borad[2][2] === borad[2][0]){
-        if (borad[2][2]!== 0){
-        return {end:true, type:borad[2][2]}
+    if (borad[0][2] === borad[1][1] && borad[0][2] === borad[2][0]){
+        if (borad[0][2]!== 0){
+        return {end:true, type:borad[0][2]
+        }
     }}
+            if (plays >= 9){
+                return {end:true, type:"draw"}
+            }
 
     return {end:false, type:null}
 }
